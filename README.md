@@ -19,6 +19,26 @@ docker-compose -f docker-compose.yml -f server/docker-compose.yml --env-file .en
 
 In your code you can then use `server` when specifying the CARLA server hostname in `carla.Client`.
 
+## Some explanations
+
+It is assumed that the code you are developing will live in the `/app` directory.
+Preferably, it would also be an installable package (hence the `PACKAGE` variable),
+e.g. generated with [PyScaffold](https://pyscaffold.org/en/stable/). If that is not the case,
+please remove the `PACKAGE` env altogether.
+
+In general, you should have your own package repo and add this one as a submodule
+(or leave it out altogether). The recommended way is to use the carla-common image
+as a base image in your `FROM` line (see [Writing your own Dockerfile](#writing-your-own-dockerfile)).
+
+Git, basic compliers and common video (ffmpeg) and image libraries are installed by default.
+However, git credentials are not stored in the container, so you will need to provide them
+when you run `git` commands. In the future, a more lightweight image may be created,
+however, those tools were needed so often that we decided to keep them for now.
+
+Also, we have thrown-in some enhancements to simplify working with VS Code
+(e.g. volumes that store the remote VS Code or some additional Python packages).
+It should be pretty obvious which parts are that.
+
 ## Writing your own Dockerfile
 
 ```Dockerfile

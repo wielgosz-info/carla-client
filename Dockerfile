@@ -86,3 +86,8 @@ ENTRYPOINT [ "./entrypoint.sh" ]
 
 # Run infinite loop to allow easily attach to container
 CMD ["/bin/sh", "-c", "while sleep 1000; do :; done"]
+
+# Those you probably want to map to host/named volumes
+VOLUME [ "/outputs", "${HOME}/.vscode-server", "${HOME}/.vscode-server-insiders" ]
+
+# It may also be beneficial to map /app to a host directory with your code
