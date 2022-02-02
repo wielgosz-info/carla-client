@@ -76,9 +76,6 @@ RUN /venv/bin/python -m pip install --no-cache-dir \
 # Copy the 'agents' package used by e.g. scenario runner. It is a part of provided PythonAPI, but not a part of carla package.
 COPY --from=carlasim/carla:0.9.13 --chown=${USERNAME}:${USERNAME} /home/carla/PythonAPI/carla/agents /venv/lib/python3.8/site-packages/agents
 
-ARG COMMIT="0000000"
-ENV COMMIT=${COMMIT}
-
 COPY --chown=${USERNAME}:${USERNAME} ./entrypoint.sh ${HOME}/entrypoint.sh
 
 WORKDIR ${HOME}
