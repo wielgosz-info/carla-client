@@ -59,12 +59,13 @@ RUN /venv/bin/python -m pip install --no-cache-dir -U \
 # Add some utility/development requirements
 RUN /venv/bin/python -m pip install --no-cache-dir \
     autopep8 \
+    ipython \
+    ipykernel \
+    ipywidgets \
     pylint \
     pytest \
     pytest-cov \
-    ipython \
-    ipykernel \
-    ipywidgets
+    unify
 
 # Automatically activate virtualenv for user
 RUN echo 'source /venv/bin/activate' >> ${HOME}/.bashrc
