@@ -2,6 +2,8 @@
 
 Minimal Docker container that can be used for developing Python code using CARLA 0.9.13 Python API.
 
+Developed as a part of [Adversarial Cases for Autonomous Vehicles (ARCANE) project](https://project-arcane.eu/).
+
 Run it like this:
 ```sh
 COMMIT=$(git rev-parse --short HEAD) USER_ID=$(id -u) GROUP_ID=$(id -g) \
