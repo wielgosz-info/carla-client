@@ -10,4 +10,4 @@ services:
         GROUP_ID: ${GROUP_ID:-1000}
         USERNAME: carla
         PLATFORM: ${PLATFORM:-nvidia}
-    image: wielgoszinfo/carla-common:${PLATFORM:-nvidia}-latest
+    image: ${IMAGES_NAMESPACE:-wielgoszinfo}/carla-common:${PLATFORM:-nvidia}-latest
