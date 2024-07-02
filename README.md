@@ -4,17 +4,10 @@ Minimal Docker container that can be used for developing Python code using CARLA
 
 Developed as a part of [Adversarial Cases for Autonomous Vehicles (ARCANE) project](https://project-arcane.eu/).
 
-Run it like this:
+Run it like this (includes CARLA server):
 ```sh
 COMMIT=$(git rev-parse --short HEAD) USER_ID=$(id -u) GROUP_ID=$(id -g) \
 docker-compose -f docker-compose.yml up -d --build
-```
-
-The default `docker-compose.yml` only runs the container with the client. If you also want a server, you can use the `server/docker-compose.yml` and `.env` files like this:
-
-```sh
-COMMIT=$(git rev-parse --short HEAD) USER_ID=$(id -u) GROUP_ID=$(id -g) \
-docker-compose -f docker-compose.yml -f server/docker-compose.yml --env-file .env up -d --build
 ```
 
 `.env` file contains server config variables.
