@@ -90,7 +90,7 @@ COPY --chown=${USERNAME}:${USERNAME} ./entrypoint.sh ${HOME}/entrypoint.sh
 COPY --chown=${USERNAME}:${USERNAME} ./client ${HOME}/client
 
 WORKDIR ${HOME}
-ENTRYPOINT [ "./entrypoint.sh" ]
+ENTRYPOINT [ "/home/carla/entrypoint.sh" ]
 
 # Run infinite loop to allow easily attach to container
 CMD ["/bin/sh", "-c", "while sleep 1000; do :; done"]
